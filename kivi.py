@@ -1,6 +1,7 @@
 from PIL import Image
 from pyzbar.pyzbar import decode
 #import picamera
+import serial
 from kivy.uix.textinput import TextInput
 from kivy.uix.textinput import TextInput
 from data import key_by_num
@@ -55,19 +56,20 @@ class Menu_of_box(Screen):
     def __init__(self, **kw):
         super(Menu_of_box, self).__init__(**kw)
         gl = BoxLayout(orientation='vertical', padding=10, spacing=10, size_hint=(0.75, .75), pos=(250, 100))
-        gl.add_widget(Button(text="BOx_1", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_2", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_3", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_4", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_5", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_6", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_7", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_8", on_press=lambda x: self.on_press()))
-        gl.add_widget(Button(text="BOx_9", on_press=lambda x: self.on_press()))
+        gl.add_widget(Button(text="BOx_1", on_press=lambda x: self.on_press1()))
+        gl.add_widget(Button(text="BOx_2", on_press=lambda x: self.on_press2()))
+        gl.add_widget(Button(text="BOx_3", on_press=lambda x: self.on_press3()))
+        gl.add_widget(Button(text="BOx_4", on_press=lambda x: self.on_press4()))
+        gl.add_widget(Button(text="BOx_5", on_press=lambda x: self.on_press5()))
+        gl.add_widget(Button(text="BOx_6", on_press=lambda x: self.on_press6()))
+        gl.add_widget(Button(text="BOx_7", on_press=lambda x: self.on_press7()))
+        gl.add_widget(Button(text="BOx_8", on_press=lambda x: self.on_press8()))
+        gl.add_widget(Button(text="BOx_9", on_press=lambda x: self.on_press9()))
         gl.add_widget(Button(text="НАЗАД", on_press=lambda x: self.on_press()))
         self.add_widget(gl)
-    def on_press(self, instance):
-        number = int(instance.text[-1])
+    def on_press(self):
+        set_screen("menu")
+        '''number = int(instance[-1])
         usbCom = serial.Serial('/dev/ttyACM0', 9600)
         time.sleep(2)  # <<=======================================
         usbCom.open
@@ -75,8 +77,87 @@ class Menu_of_box(Screen):
         usbCom.write(str(number).encode('utf-8'))
         usbCom.close
         key_by_num(self.qr_answer, 'ничего')
+        set_screen("menu")'''
+    def on_press2(self):
+        number = 2
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
         set_screen("menu")
-
+    def on_press3(self):
+        number = 3
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
+    def on_press4(self):
+        number = 4
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
+    def on_press5(self):
+        number = 5
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
+    def on_press6(self):
+        number = 6
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
+    def on_press7(self):
+        number = 7
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
+    def on_press8(self):
+        number = 8
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
+    def on_press9(self):
+        number = 9
+        '''usbCom = serial.Serial('/dev/ttyACM0', 9600)
+        time.sleep(2)  # <<=======================================
+        usbCom.open
+        time.sleep(2)
+        usbCom.write(str(number).encode('utf-8'))
+        usbCom.close
+        key_by_num(self.qr_answer, 'ничего')'''
+        set_screen("menu")
 class Regestration(Screen):
     def __init__(self, **kw):
         super(Regestration, self).__init__(**kw)
@@ -97,11 +178,13 @@ class Regestration(Screen):
         gl.add_widget(self.email)
         self.add_widget(gl)
 
+        gl.add_widget(Button(text="НАЗАД", on_press=lambda x: self.on_press14()))
+
     def on_text(instance,  value):
         print('The widget', instance, 'have:', value)
+    def on_press14(self):
+        set_screen("menu")
 
-
-    #
 sm = ScreenManager()
 sm.add_widget(Menu_Screen(name='menu'))
 sm.add_widget(Menu_of_box(name='m_box'))
